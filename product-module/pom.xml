@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.destaproject</groupId>
+        <artifactId>market-place-apps</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>product-module</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>product-module</name>
+    <description>Product module for marketplace apps</description>
+    <dependencies>
+        <!-- add dependencies specific to this module here -->
+    </dependencies>
+</project>
