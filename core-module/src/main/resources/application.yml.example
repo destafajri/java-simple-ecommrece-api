@@ -1,0 +1,58 @@
+server:
+  port: 8080
+logging:
+  level:
+    '[com.destaproject]': TRACE
+    org.springframework.data.elasticsearch.client.WIRE: TRACE
+app:
+  timezone: Asia/Jakarta
+credential:
+  APIkey: ${SECRET_KEY}
+
+spring:
+  main:
+    allow-circular-references: true
+  elasticsearch:
+    uris: ${ELASTICSEARCH_NODES_URL}
+    username: ${ELASTICSEARCH_USERNAME}
+    password: ${ELASTICSEARCH_PASSWORD}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    data:
+      elasticsearch:
+        repositories:
+          enabled: true
+
+database:
+  user-module:
+    datasource:
+      url: ${POSTGRES_USER_URL}
+      username: ${POSTGRES_USER_USERNAME}
+      password: ${POSTGRES_USER_PASSWORD}
+      driverClassName: org.postgresql.Driver
+  merchant-module:
+    datasource:
+      url: ${POSTGRES_MERCHANT_URL}
+      username: ${POSTGRES_MERCHANT_USERNAME}
+      password: ${POSTGRES_MERCHANT_PASSWORD}
+      driverClassName: org.postgresql.Driver
+  order-module:
+    datasource:
+      url: ${POSTGRES_ORDER_URL}
+      username: ${POSTGRES_ORDER_USERNAME}
+      password: ${POSTGRES_ORDER_PASSWORD}
+      driverClassName: org.postgresql.Driver
+  payment-module:
+    datasource:
+      url: ${POSTGRES_PAYMENT_URL}
+      username: ${POSTGRES_PAYMENT_USERNAME}
+      password: ${POSTGRES_PAYMENT_PASSWORD}
+      driverClassName: org.postgresql.Driver
+  product-module:
+    datasource:
+      url: ${POSTGRES_PRODUCT_URL}
+      username: ${POSTGRES_PRODUCT_USERNAME}
+      password: ${POSTGRES_PRODUCT_PASSWORD}
+      driverClassName: org.postgresql.Driver
