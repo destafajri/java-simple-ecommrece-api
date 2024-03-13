@@ -25,7 +25,6 @@ services:
       - "6379:6379"
     volumes:
       - redis-data:/certs
-    command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
 
   mailhog:
     image: mailhog/mailhog:latest
@@ -48,7 +47,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres-data:/var/lib/postgres
+      - postgres-user:/var/lib/postgres
 
   postgres-merchant:
     image: 'postgres:15.0'
@@ -60,9 +59,9 @@ services:
     expose:
       - 5433
     ports:
-      - "5433:5433"
+      - "5433:5432"
     volumes:
-      - postgres-data:/var/lib/postgres
+      - postgres-merchant:/var/lib/postgres
 
   postgres-order:
     image: 'postgres:15.0'
@@ -74,9 +73,9 @@ services:
     expose:
       - 5434
     ports:
-      - "5434:5434"
+      - "5434:5432"
     volumes:
-      - postgres-data:/var/lib/postgres
+      - postgres-order:/var/lib/postgres
 
   postgres-payment:
     image: 'postgres:15.0'
@@ -88,9 +87,9 @@ services:
     expose:
       - 5435
     ports:
-      - "5435:5435"
+      - "5435:5432"
     volumes:
-      - postgres-data:/var/lib/postgres
+      - postgres-payment:/var/lib/postgres
 
   postgres-product:
     image: 'postgres:15.0'
@@ -102,9 +101,9 @@ services:
     expose:
       - 5436
     ports:
-      - "5436:5436"
+      - "5436:5432"
     volumes:
-      - postgres-data:/var/lib/postgres
+      - postgres-product:/var/lib/postgres
 
 #  springboot-app:
 #    build:
@@ -141,6 +140,10 @@ services:
 volumes:
   elasticsearch-data:
   redis-data:
-  postgres-data:
   mailhog-data:
+  postgres-user:
+  postgres-merchant:
+  postgres-order:
+  postgres-payment:
+  postgres-product:
 #  springboot-data:
