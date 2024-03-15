@@ -1,4 +1,4 @@
-package com.destaproject.user.configuration;
+package com.destaproject.user.infrastructure.configuration;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "userEntityManagerFactory",
         transactionManagerRef = "userTransactionManager",
-        basePackages = {"com.destaproject.user.repository"}
+        basePackages = {"com.destaproject.user.infrastructure.datasource.jpa.repository"}
 )
 public class PostgreSqlConfig {
 
@@ -44,7 +44,7 @@ public class PostgreSqlConfig {
             EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(hubDataSource)
-                .packages("com.destaproject.user.entity")
+                .packages("com.destaproject.user.infrastructure.datasource.jpa.entity")
                 .persistenceUnit("postgres")
                 .build();
     }

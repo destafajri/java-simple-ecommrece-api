@@ -1,4 +1,4 @@
-package com.destaproject.user.configuration;
+package com.destaproject.user.infrastructure.configuration;
 
 import org.flywaydb.core.Flyway;
 import org.springframework.context.annotation.Bean;

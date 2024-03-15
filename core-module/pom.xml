@@ -43,6 +43,11 @@
             <artifactId>user-module</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.destaproject</groupId>
+            <artifactId>common-module</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <!--    spring dependency  -->
         <dependency>

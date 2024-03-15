@@ -4,12 +4,12 @@ logging:
   level:
     '[com.destaproject]': TRACE
     org.springframework.data.elasticsearch.client.WIRE: TRACE
-app:
-  timezone: Asia/Jakarta
 credential:
   APIkey: ${SECRET_KEY}
 
 spring:
+  jackson:
+    time-zone: Asia/Jakarta
   main:
     allow-circular-references: true
   elasticsearch:
