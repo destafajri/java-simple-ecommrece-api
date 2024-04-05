@@ -30,7 +30,6 @@
 
     <modules>
         <module>core-module</module>
-        <module>auth-module</module>
         <module>user-module</module>
         <module>merchant-module</module>
         <module>product-module</module>

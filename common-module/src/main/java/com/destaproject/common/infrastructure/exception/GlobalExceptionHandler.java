@@ -1,6 +1,6 @@
 package com.destaproject.common.infrastructure.exception;
 
-import com.destaproject.common.infrastructure.web.response.ResponseData;
+import com.destaproject.common.infrastructure.web.presenter.ResponseData;
 import io.jsonwebtoken.JwtException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;

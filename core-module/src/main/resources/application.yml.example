@@ -4,10 +4,28 @@ logging:
   level:
     '[com.destaproject]': TRACE
     org.springframework.data.elasticsearch.client.WIRE: TRACE
-credential:
-  APIkey: ${SECRET_KEY}
+application:
+  url: ${APP_URL}
+
+security:
+    jwt:
+      secret-key: ${SECRET_KEY}
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
 
 spring:
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+              enable: true
   jackson:
     time-zone: Asia/Jakarta
   main:
